@@ -12,7 +12,7 @@ class ListingsController extends Controller
         return view('listings',
                     [
                         'heading' => 'Latest Listings',
-                        'listings' => Listing::all_listings()
+                        'listings' => Listing::all()
                     ]
         );
     }
