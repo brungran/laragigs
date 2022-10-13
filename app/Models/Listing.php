@@ -9,7 +9,7 @@ class Listing extends Model
 {
     use HasFactory;
 
-    public static function todos(){
+    public static function all_listings(){
         return [
             [
                 'id' => 1,
@@ -23,5 +23,14 @@ class Listing extends Model
                                   Lorem nisi consectetur deserunt eiusmod nulla ad velit laborum sint velit nulla. Incididunt tempor consectetur aliqua labore. Id esse exercitation pariatur cillum.'
             ]
         ];
+    }
+
+    public static function find($id){
+        $listings = self::all();
+        foreach ($listings as $listing) {
+            if ($listing['id'] == $id) {
+                return $listing;
+            }
+        }
     }
 }
