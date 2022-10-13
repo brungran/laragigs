@@ -26,10 +26,10 @@ class Listing extends Model
     }
 
     public static function find($id){
-        $listings = self::all();
+        $listings = self::all_listings();
         foreach ($listings as $listing) {
             if ($listing['id'] == $id) {
-                return $listing;
+                return [$listing];
             }
         }
     }

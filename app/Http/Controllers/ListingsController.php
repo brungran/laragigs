@@ -16,4 +16,12 @@ class ListingsController extends Controller
                     ]
         );
     }
+    public function single_listing($id){
+        return view('listings',
+                    [
+                        'heading' => 'Latest Listings',
+                        'listings' => Listing::find($id)
+                    ]
+        );
+    }
 }
