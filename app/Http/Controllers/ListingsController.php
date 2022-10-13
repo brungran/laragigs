@@ -16,7 +16,12 @@ class ListingsController extends Controller
                     ]
         );
     }
-    public function find($id){
-        return view('listing', ['listing' => Listing::find($id)]);
+    public function find(Listing $listing){
+        return view(
+            'listing',
+            [
+                'listing' => $listing
+            ]
+        );
     }
 }

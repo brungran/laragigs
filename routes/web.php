@@ -4,6 +4,7 @@ use App\Http\Controllers\mainController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ListingsController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,9 +25,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/about', [AboutController::class, 'main'])->name('site.about');
 Route::get('/contact', [ContactController::class, 'main'])->name('site.contact'); */
 Route::get('/', [ListingsController::class, 'main']);
-Route::get('/{id}', [ListingsController::class, 'find']);
-/* Route::get('/contact/{name}{surname}', function ($name, $surname) {
-    return $name . ' ' . $surname;
+Route::get('/{listing}', [ListingsController::class, 'find']);
+/* Route::get('/{listing}', function(Listing $listing){
+    return view(
+        'listing',
+        [
+            'listing' => $listing
+        ]
+    );
 }); */
 
 //prefixes
