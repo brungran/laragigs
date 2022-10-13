@@ -3,4 +3,8 @@
     <li><a href="{{route('site.index')}}">Main</a></li>
     <li><a href="{{route('site.about')}}">About</a></li>
     <li><a href="{{route('site.contact')}}">Contact</a></li>
+    @foreach ($listings as $listing)
+        <h1>{{$listing['title']}}</h1>
+        <p>{{$listing['description']}}</p>
+    @endforeach
 </ul>
