@@ -8,14 +8,14 @@ use App\Models\Listing;
 
 class ListingsController extends Controller
 {
-    public function main(){
+    public function index(){
         return view('listings',
                     [
                         'listings' => Listing::all()
                     ]
         );
     }
-    public function find(Listing $listing){
+    public function show(Listing $listing){
         return view(
             'listing',
             [
