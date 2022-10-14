@@ -11,7 +11,6 @@ class ListingsController extends Controller
     public function main(){
         return view('listings',
                     [
-                        'heading' => 'Latest Listings',
                         'listings' => Listing::all()
                     ]
         );
