@@ -8,6 +8,7 @@ use App\Models\Listing;
 
 class ListingsController extends Controller
 {
+    //show all listings
     public function index(){
         return view('listings',
                     [
@@ -15,6 +16,8 @@ class ListingsController extends Controller
                     ]
         );
     }
+
+    //show single listing
     public function show(Listing $listing){
         return view(
             'listings.show',
