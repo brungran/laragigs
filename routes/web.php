@@ -1,4 +1,12 @@
 <?php
+// Common Resource Routes:
+// index - Show all listings
+// show - Show single listing
+// create - Show form to create new listing
+// store - Store new listing
+// edit - Show form to edit listing
+// update - Update listing
+// destroy - Delete listing  
 
 use App\Http\Controllers\mainController;
 use App\Http\Controllers\AboutController;
@@ -7,33 +15,8 @@ use App\Http\Controllers\ListingsController;
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-/* Route::get('/', function () {
-    return view('welcome');
-}); */
-/* Route::get('/', [mainController::class, 'main'])->name('site.index');
-Route::get('/about', [AboutController::class, 'main'])->name('site.about');
-Route::get('/contact', [ContactController::class, 'main'])->name('site.contact'); */
-Route::get('/', [ListingsController::class, 'main']);
+Route::get('/', [ListingsController::class, 'index']);
 Route::get('/{listing}', [ListingsController::class, 'find']);
-/* Route::get('/{listing}', function(Listing $listing){
-    return view(
-        'listing',
-        [
-            'listing' => $listing
-        ]
-    );
-}); */
 
 //prefixes
 /* Route::prefix('app')->group(function(){
