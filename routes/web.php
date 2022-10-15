@@ -16,7 +16,7 @@ use App\Http\Controllers\ListingsController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ListingsController::class, 'index']);
-Route::get('/{listing}', [ListingsController::class, 'show']);
+Route::get('/listings/{listing}', [ListingsController::class, 'show']);
 
 //prefixes
 /* Route::prefix('app')->group(function(){
