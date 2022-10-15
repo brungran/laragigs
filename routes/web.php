@@ -15,7 +15,16 @@ use App\Http\Controllers\ListingsController;
 
 use Illuminate\Support\Facades\Route;
 
+//all listings
 Route::get('/', [ListingsController::class, 'index']);
+
+//show create form
+Route::get('/listings/create', [ListingsController::class, 'create']);
+
+//store listing data
+Route::post('/listings', [ListingsController::class, 'store']);
+
+//single listing
 Route::get('/listings/{listing}', [ListingsController::class, 'show']);
 
 //prefixes
