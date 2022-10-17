@@ -8,9 +8,6 @@
 // update - Update listing
 // destroy - Delete listing  
 
-use App\Http\Controllers\mainController;
-use App\Http\Controllers\AboutController;
-use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ListingsController;
 
 use Illuminate\Support\Facades\Route;
@@ -24,18 +21,11 @@ Route::get('/listings/create', [ListingsController::class, 'create']);
 //store listing data
 Route::post('/listings', [ListingsController::class, 'store']);
 
+//show edit form
+Route::get('/listings/{listing}/edit', [ListingsController::class, 'edit']);
+
+//edit submit to update
+Route::put('/listings/{listing}', [ListingsController::class, 'update']);
+
 //single listing
 Route::get('/listings/{listing}', [ListingsController::class, 'show']);
-
-//prefixes
-/* Route::prefix('app')->group(function(){
-    Route::get('/clients', function () {
-        return 'clients';
-    })->name('app.clients');
-    Route::get('/providers', function () {
-        return 'providers';
-    })->name('app.providers');
-    Route::get('/products', function () {
-        return 'products';
-    })->name('app.products');
-}); */
