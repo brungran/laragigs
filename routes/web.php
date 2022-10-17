@@ -8,9 +8,10 @@
 // update - Update listing
 // destroy - Delete listing  
 
-use App\Http\Controllers\ListingsController;
-
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ListingsController;
 
 //all listings
 Route::get('/', [ListingsController::class, 'index']);
@@ -32,3 +33,6 @@ Route::delete('/listings/{listing}', [ListingsController::class, 'destroy']);
 
 //single listing
 Route::get('/listings/{listing}', [ListingsController::class, 'show']);
+
+//show register form
+Route::get('/register', [UserController::class, 'create']);
