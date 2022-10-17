@@ -45,6 +45,10 @@
                             Manage Listings</a
                         >
                     </li>
+                    <form class="inline" method="POST" action="/logout">
+                        @csrf
+                        <button><i class="fa-sharp fa-solid fa-right-from-bracket"></i> Logout</button>
+                    </form>
                 @else
                     <li>
                         <a href="/register" class="hover:text-laravel"
