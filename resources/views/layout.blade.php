@@ -40,7 +40,7 @@
                         </span>
                     </li>
                     <li>
-                        <a href="/login" class="hover:text-laravel"
+                        <a href="/listings/manage" class="hover:text-laravel"
                             ><i class="fa-sharp fa-solid fa-clipboard"></i>
                             Manage Listings</a
                         >
